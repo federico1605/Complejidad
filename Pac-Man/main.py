@@ -9,32 +9,38 @@ matrizSize = int(input("Escriba el tamaña de la matriz: "))
 
 matriz = [[0 for fila in range(matrizSize)] for columna in range(matrizSize)]
 
-for filas in range(matrizSize):
-    matriz = [random.choice(data) for _ in range(matrizSize)]
-    matriz2.append(matriz)
-    print(matriz2)
+
+def addMatriz():
+    for filas in range(matrizSize):
+        matriz = [random.choice(data) for _ in range(matrizSize)]
+        matriz2.append(matriz)
 
 
-def counter_matriz():
-    global contador, contadorR
-    for x in matriz2:
-        if x == "O":
-            contador += contador
-        if x == "A":
-            contador = 0
+addMatriz()
 
-    for x in reversed(matriz2):
-        if x == "O":
-            contadorR += contadorR
-        if x == "A":
-            contadorR = 0
+if matriz2[0][0] == 'A':
+    matriz2.clear()
+    addMatriz()
+elif matriz2[0][0] == 'O':
+    matriz2.clear()
+    addMatriz()
 
-    if contador > contadorR:
-        print(contador)
-        return contador
-    else:
-        print("R", contadorR)
-        return contadorR
+for x in matriz:
+    if x == 'O':
+        contador = contador + 1
+    elif x == 'A':
+        contador = 0
+
+for x in reversed(matriz):
+    if x == 'O':
+        contadorR += contadorR
+    elif x == 'A':
+        contadorR = 0
+
+if contador > contadorR:
+    print("Mejor camnio el original", contador)
+else:
+    print("Mejor camino con el recorrido al reves ", contadorR)
 
 
-counter_matriz()
+print(matriz2)
