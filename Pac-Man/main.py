@@ -31,7 +31,7 @@ for x in range(size):
             elif matriz[x][y] == "A":
                 counter = 0
     else:
-        for y in range(size - 1, -1, -1):
+        for y in range(size - 1, -1, -1):  # Se invierte la lista para contador de comida inverso
             if matriz[x][y] == "o":
                 counter += 1
                 if counter > counterMax:
