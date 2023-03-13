@@ -1,6 +1,13 @@
+'''
+Se realizo el problema de code Forces de thermostat, con el cual se 
+hicieron diferentes validaciones para poder garantizar la cantidad de 
+pasos que se deben ejecutar para poder pasar la tempertatuta, de forma
+que se comprueba con los if que tanta cantidad de pasos se necesitan 
+para realizar el cambio de temperatura.
+'''
 t = int(input())  # Cantidad de veces que va a calcular
 result = []
-for i in range(t):
+for i in range(t): 
     l,r,x = map(int,input().split())
     a,b = map(int,input().split())
     if a == b:
